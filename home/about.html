@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư viện Garena Liên Quân | Thắng bại tại kỹ năng</title>
+    <link rel="shortcut icon" type="image/png" href="/template_demo/AOV/assets/icon/android-icon-192x192.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      const listPost = [
+        {
+          id: 1,
+          title: "POST 1",
+          image:
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+          description: "desctipon 1",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 2,
+          title: "POST 2",
+          image: "https://www.w3schools.com/w3css/img_lights.jpg",
+          description: "desctipon 2",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 3,
+          title: "POST 3",
+          image:
+            "https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&w=1000&q=80",
+          description: "desctipon 3",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 4,
+          title: "POST 4",
+          image: "https://www.w3schools.com/w3css/img_lights.jpg",
+          description: "desctipon 4",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 4,
+          title: "POST 5",
+          image:
+            "https://media.istockphoto.com/photos/colored-powder-explosion-on-black-background-picture-id1140180560?k=20&m=1140180560&s=612x612&w=0&h=X_400OQDFQGqccORnKt2PHYvTZ3dBLeEnCH_hRiUQrY=",
+          description: "desctipon 5",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 4,
+          title: "POST 6",
+          image: "https://www.w3schools.com/w3css/img_lights.jpg",
+          description: "desctipon 7",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 4,
+          title: "POST 4",
+          image: "https://www.w3schools.com/w3css/img_lights.jpg",
+          description: "desctipon 4",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 4,
+          title: "POST 5",
+          image:
+            "https://media.istockphoto.com/photos/colored-powder-explosion-on-black-background-picture-id1140180560?k=20&m=1140180560&s=612x612&w=0&h=X_400OQDFQGqccORnKt2PHYvTZ3dBLeEnCH_hRiUQrY=",
+          description: "desctipon 5",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        },
+        {
+          id: 4,
+          title: "POST 6",
+          image: "https://www.w3schools.com/w3css/img_lights.jpg",
+          description: "desctipon 7",
+          languages: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+          maskContent: {
+            title: "GOOGLE",
+            description: "aaaa"
+          }
+        }
+      ];
+      function handleShowData() {
+        `
+        // const strHtml = `;
+        //  		<div class="box">
+        //  			<img src=${item.image} />
+        //  			<h3 class="title">title</h3>
+        //  			<p class="desctiption">desctiption</p>
+        //  		</div>
+        //  `;
+
+        let contentHTML = "";
+        listPost.forEach(function (item, index, array) {
+          contentHTML += "<div class='box'>";
+          contentHTML += "<img src=" + item.image + " />";
+          contentHTML += "<h3 class='title'>" + item.title + "</h3>";
+          contentHTML += "<p class='desctiption'>" + item.description + "</p>";
+          contentHTML += "</div>";
+
+          contentHTML += `
+            <div class="box">
+         			<img src=${item.image} />
+               <h3 class="title">${item.title}</h3>
+               <ul>
+            `;
+
+          let strTemp = "";
+          item.languages.forEach(function (language, index, array) {
+            strTemp += `<li>${language}</li>`;
+          });
+          contentHTML += strTemp;
+          contentHTML += `</ul>
+         		</div>
+          `;
+        });
+
+        const wrapper = document.getElementsByClassName("wrapper");
+        if (wrapper.length) {
+          const element = wrapper[0];
+          element.innerHTML = contentHTML;
+        }
+      }
+    </script>
+</head>
+<body>
+   
+    
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="box">
+        <div class="content"></div>
+        <div class="mask">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <button onclick="handleShowData()">click me</button>
+    <script src="src/index.js"></script>
+  
+</body>
+</html>
